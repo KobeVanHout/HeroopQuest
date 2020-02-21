@@ -6,7 +6,8 @@ namespace src_HeroopQuest
     {
         static void Main(string[] args)
         {
-         
+            Held held1 = new Held(HeroType.Barbaar, "Conan");
+            Held held2 = new Held(HeroType.Tovenaar, "Bard");
         }
     }
 }

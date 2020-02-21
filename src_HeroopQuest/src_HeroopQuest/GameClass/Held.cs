@@ -8,6 +8,37 @@ namespace src_HeroopQuest.GameClass
 
     class Held
     {
+        public Held(HeldType type, string naam)
+        {
+            Naam = naam;
+            HeroType = type;
+            switch (type)
+            {
+                case HeldType.Barbaar:
+                    AanvalDobbesteen = 3;
+                    MaxIntelligentie = 2;
+                    MaxHealth = 8;
+                    break;
+                case HeldType.Tovenaar:
+                    AanvalDobbesteen = 1;
+                    MaxIntelligentie = 6;
+                    MaxHealth = 4;
+                    break;
+                case HeldType.Dwerg:
+                    MaxIntelligentie = 3;
+                    MaxHealth = 7;
+                    break;
+                case HeldType.Elf:
+                    MaxIntelligentie = 4;
+                    MaxHealth = 6;
+                    break;
+                default:
+                    break;
+            }
+            HuidigIntelligentie = MaxIntelligentie;
+            HuidigLichaam = MaxHealth;
+        }
+
         public string Naam { get; set; }
 
         public int MaxIntelligentie { get;private set; }
@@ -18,15 +49,15 @@ namespace src_HeroopQuest.GameClass
 
         public int HuidigLichaam { get; set; }
 
-        public HeldType HeroType { get; set; }
+        public HeldType HeroType { get;private set; }
 
         public string Beschrijving{ get;private set; }
 
         public int AanvalDobbesteen { get; private set; } = 2;
 
-        public int Verdediging { get; private set; } = 2;
+        public int VerdedigingDobbesteen { get; private set; } = 2;
 
-        public int Loop { get; private set; } = 2;
+        public int LoopDobbesteen { get; private set; } = 2;
 
     }
 }
